@@ -1,0 +1,21 @@
+from .base_page import BasePage
+from selenium.webdriver.common.by import By
+from .locators import ProductPageLocators
+import time
+
+class ProductPage(BasePage):
+	
+	def add_product_to_basket(self):
+		
+		print("find button 'add to basket'")
+		addtobasket_button = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET)
+		print("clicked to button")		
+		addtobasket_button.click()
+		BasePage.solve_quiz_and_get_code(self)
+		
+
+	
+	def should_be_added_to_basket_message(self):
+		print("Checking added product to basket")
+		checking_text = self.browser.find_element(*ProductPageLocators.CHECKING_TEXT).text
+		assert checking_text in self.browser.find_element(*ProductPageLocators.PRODUCT_ADDED).text, "No report that the item has been added to basket"
