@@ -1,6 +1,7 @@
 from .base_page import BasePage
 from selenium.webdriver.common.by import By
 from .locators import ProductPageLocators
+
 import time
 
 class ProductPage(BasePage):
@@ -16,6 +17,10 @@ class ProductPage(BasePage):
 
 	
 	def should_be_added_to_basket_message(self):
+		
 		print("Checking added product to basket")
 		checking_text = self.browser.find_element(*ProductPageLocators.CHECKING_TEXT).text
-		assert checking_text in self.browser.find_element(*ProductPageLocators.PRODUCT_ADDED).text, "No report that the item has been added to basket"
+		assert checking_text == self.browser.find_element(*ProductPageLocators.PRODUCT_ADDED).text, "No report that the item has been added to basket"
+	
+	def should_not_be_success_message(self):
+		assert self.is_not_element_present(*ProductPageLocators.PRODUCT_ADDED), "Success message is presented, but should not be"
