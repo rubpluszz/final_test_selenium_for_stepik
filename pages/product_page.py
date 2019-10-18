@@ -4,7 +4,6 @@ from .locators import ProductPageLocators
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
 import time
 
 class ProductPage(BasePage):
@@ -17,8 +16,6 @@ class ProductPage(BasePage):
 		addtobasket_button.click()
 		BasePage.solve_quiz_and_get_code(self)
 		
-
-	
 	def should_be_added_to_basket_message(self):
 		
 		print("Checking added product to basket")
