@@ -5,6 +5,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from .locators import BasePageLocators
+from selenium.webdriver.common.by import By
 
 class BasePage():
     
@@ -60,8 +61,23 @@ class BasePage():
 		login_link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
 		print("Clicked login link")
 		login_link.click()
-		alert = self.browser.switch_to.alert	
-		alert.accept()
+#		alert = self.browser.switch_to.alert	
+#		alert.accept()
 	
+
 	def should_be_login_link(self):
-		assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Loginlink is not presented"
+		
+		assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
+		
+	def product_in_basket_opened(self):
+		
+		view_basket_button = self.browser.find_element(*BasePageLocators.VIEW_BASKET)
+		print("Clicked login link")
+		view_basket_button.click()
+		
+	def should_not_be_product_in_bascet(self):
+		
+		assert self.is_not_element_present(*BasePageLocators.PRODUCT_ADDED), "Product in basket"	
+
+	def should_be_emptay_basket_message(self):
+		assert self.is_element_present(*BasePageLocators.CHECKING_TEXT), "Not \"Your basket is now empty\"message" 
