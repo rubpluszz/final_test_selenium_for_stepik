@@ -17,8 +17,13 @@ class BasePageLocators():
 	PRODUCT_ADDED = (By.CSS_SELECTOR, "#id_form-0-quantity")
 	VIEW_BASKET = (By.CSS_SELECTOR, ".btn-group>a")
 	CHECKING_TEXT = (By.CSS_SELECTOR, "#content_inner>p:nth-child(1)")
+	USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 	
 class LoginPageLocators():
 	
 	LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
 	REGISTRATION_FORM = (By.CSS_SELECTOR, "#register_form")
+	EMAIL_REGISTRATION = (By.CSS_SELECTOR, "#id_registration-email")
+	PASSWORD_REGISTRATION_ONE =(By.CSS_SELECTOR, "#id_registration-password1")
+	PASSWORD_REGISTRATION_THWO = (By.CSS_SELECTOR, "#id_registration-password2")
+	REGISTER_BUTTON = (By.NAME, "registration_submit")
