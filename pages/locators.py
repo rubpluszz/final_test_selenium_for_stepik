@@ -9,7 +9,8 @@ class ProductPageLocators():
 	ADD_TO_BASKET = (By.CSS_SELECTOR, ".btn-add-to-basket")
 	CHECKING_TEXT = (By.CSS_SELECTOR, ".product_main>h1")
 	PRODUCT_ADDED = (By.CSS_SELECTOR, "#messages>div:nth-child(1)> div:nth-child(2) > strong")
-	
+	DEL_USSER_BUTTON = (By.CSS_SELECTOR,".form-group>button")
+	PASSWORD_TO_USER_DEL = (By.CSS_SELECTOR, "#id_password")
 class BasePageLocators():
 	
 	LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
