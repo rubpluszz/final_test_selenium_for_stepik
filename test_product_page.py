@@ -41,7 +41,7 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     page.product_in_basket_opened()
     page.should_not_be_product_in_bascet()
     page.should_be_emptay_basket_message()
-    assert "empty" in browser.find_element(*BasePageLocators.CHECKING_TEXT).text, "No empty basket message"
+    BasePage.check_empty_bascket(browser)
 
 @pytest.mark.usser_add_to_basket
 class TestUserAddToBasketFromProductPage():

@@ -31,6 +31,4 @@ class ProductPage(BasePage):
         browser.get("http://selenium1py.pythonanywhere.com/ru/accounts/profile/delete/")
         input_password = browser.find_element(*ProductPageLocators.PASSWORD_TO_USER_DEL)
         input_password.send_keys(password)
-        browser.find_element(*ProductPageLocators.PASSWORD_TO_USER_DEL).click
-	
-
+        browser.find_element(*ProductPageLocators.PASSWORD_TO_USER_DEL).click	
